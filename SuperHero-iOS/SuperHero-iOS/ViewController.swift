@@ -12,9 +12,8 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
     
     
     var filteredHeroes: [Hero] = []
-    var searchHeroes: [String] = []
+    var searchHeroes : [Hero] = []
     
-   
     
     
     
@@ -32,7 +31,10 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
         searchbar.delegate = self
         coleccionSuperHero.delegate = self
         coleccionSuperHero.dataSource = self
+        self.navigationItem.title = "Superheroes"
         
+        
+         
         
       
         
@@ -53,9 +55,12 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
          
          }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-           print(searchText)
-       }
+    
+    
+    
+    
+    
+  
     
     
     
@@ -114,7 +119,7 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
             
             
             do {
-                filteredHeroes = try await SuperHeroProvider.getSuperheroFromApi(name: "Super")
+                filteredHeroes = try await SuperHeroProvider.getSuperheroFromApi(query: "a")
                 print(filteredHeroes.count)
                 
                 
@@ -130,25 +135,7 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
           
             
         }
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        
-        // es como un if pero para cuando puede devolver nulos
-        
-        guard let indexPath =  coleccionSuperHero. else {
-            print("No SuperHero selected")
-            return
-        }
-        
-        let superero = list[indexPath.row]
-        let viewController: DetailViewController = segue.destination as! DetailViewController
-        
-        //declaro var en Detail
-        viewController.horoscope = horoscope
-        
-        
-        
-    }*/
-        
+ 
         
         
         

@@ -45,11 +45,11 @@ struct Powerstats: Decodable {
 
 class SuperHeroProvider {
     
-    static func getSuperheroFromApi(name: String) async throws -> [Hero] {
+    static func getSuperheroFromApi(query: String) async throws -> [Hero] {
         
 
             do {
-                let url = URL(string: "https://superheroapi.com/api/7252591128153666/search/\(name)")!
+                let url = URL(string: "https://superheroapi.com/api/7252591128153666/search/\(query)")!
                 let (data,_) = try await URLSession.shared.data(from: url)
                 let decoded = try JSONDecoder().decode(ResponseData.self, from: data)
                 return decoded.results

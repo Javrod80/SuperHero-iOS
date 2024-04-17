@@ -9,16 +9,24 @@ import UIKit
 
 class DetailViewSuperhero: UIViewController {
     
+    var superhero : Hero? = nil
+    var detailHero : [Hero] = []
+    
    
     @IBOutlet var imageSuperHero: UIImageView!
     
-    @IBOutlet var detailStackView: UIStackView!
+   
+    @IBOutlet var inteligeneProgressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
+        
+        
+        
+    
         
 
         
@@ -32,8 +40,16 @@ class DetailViewSuperhero: UIViewController {
         
         
         
-        
     }
+    
+    
+  
+    
+  
+    
+    
+    
+    
    
     
     
