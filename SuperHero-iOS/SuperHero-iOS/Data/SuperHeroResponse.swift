@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseData: Decodable {
+struct ResponseData: Codable {
     let response: String
     //let resultsFor: String
     let results: [Hero]
@@ -16,7 +16,7 @@ struct ResponseData: Decodable {
     
 }
 
-struct Hero : Decodable {
+struct Hero : Codable {
     
     let id: String
     let name: String
@@ -24,7 +24,7 @@ struct Hero : Decodable {
     let powerstats: Powerstats
 }
 
-struct Image: Decodable {
+struct Image: Codable {
     let url: String
 
 }
@@ -32,7 +32,7 @@ struct Image: Decodable {
     
 
 
-struct Powerstats: Decodable {
+struct Powerstats: Codable {
     
     let intelligence: String
     let strength: String

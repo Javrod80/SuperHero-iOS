@@ -57,7 +57,11 @@ class ViewController: UIViewController , UICollectionViewDataSource , UISearchBa
     
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! DetailViewSuperhero
+        let indexPath = coleccionSuperHero.indexPathsForSelectedItems?.first!
+        detailVC.hero = filteredHeroes[indexPath!.row]
+    }
     
     
   
